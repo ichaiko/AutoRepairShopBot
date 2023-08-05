@@ -1,0 +1,3 @@
+django==4.2.4
+pytelegrambotapi==4.12.0
+django-init-admin-command==0.1.0
