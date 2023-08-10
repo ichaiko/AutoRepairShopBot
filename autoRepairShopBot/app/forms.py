@@ -1,11 +1,11 @@
 from django import forms
-from .models import UsersList
+from .models import BotUser
 
 
 class UsersListForm(forms.ModelForm):
     class Meta:
-        model = UsersList
+        model = BotUser
         fields = (
-            'external_id',
-            'login'
+            'telegram_id',
+            'telegram_login'
         )

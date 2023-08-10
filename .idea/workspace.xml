@@ -5,16 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96324df7-e78a-4e4d-8b8a-df32fe725226" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/autoRepairShopBot/app/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/autoRepairShopBot/app/management/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/autoRepairShopBot/app/management/commands/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/autoRepairShopBot/app/management/commands/bot.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/autoRepairShopBot/app/management/commands/botAttribute.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autoRepairShopBot/app/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoRepairShopBot/app/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoRepairShopBot/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoRepairShopBot/app/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoRepairShopBot/app/management/commands/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoRepairShopBot/app/management/commands/bot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autoRepairShopBot/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoRepairShopBot/app/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autoRepairShopBot/appSettings/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoRepairShopBot/appSettings/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autoRepairShopBot/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/autoRepairShopBot/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,10 +35,22 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
   <component name="TaskManager">
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

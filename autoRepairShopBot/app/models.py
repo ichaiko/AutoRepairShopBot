@@ -1,12 +1,15 @@
 from django.db import models
 
-class UsersList(models.Model):
-    external_id = models.PositiveIntegerField(
-        verbose_name="id пользователя"
+
+class BotUser(models.Model):
+    telegram_id = models.BigIntegerField(
+        verbose_name="id пользователя",
+        unique=True,
+        null=True
     )
 
-    login = models.CharField(
-        max_length=30, null=True, verbose_name="telegram-логин пользователя"
+    telegram_login = models.CharField(
+        max_length=30, null=True, verbose_name="логин пользователя"
     )
 
     class Meta:

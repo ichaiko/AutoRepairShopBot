@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import UsersList
+from .models import BotUser
 from .forms import UsersListForm
 
 
-@admin.register(UsersList)
+@admin.register(BotUser)
 class ProfileAdmin(admin.ModelAdmin):
     # list_display = ('id', 'external_id', 'login')
     form = UsersListForm
