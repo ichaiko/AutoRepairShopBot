@@ -8,7 +8,7 @@ class UsersListForm(forms.ModelForm):
         model = BotUser
         fields = (
             'telegram_id',
-            'telegram_login'
+            'telegram_login',
         )
 
 

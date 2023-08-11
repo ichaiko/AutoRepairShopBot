@@ -7,11 +7,11 @@ from .forms import StateForm
 
 @admin.register(BotUser)
 class ProfileAdmin(admin.ModelAdmin):
-    # list_display = ('id', 'external_id', 'login')
-    form = UsersListForm
+    list_display = ('telegram_id', 'telegram_login', 'registration_date')
+    # form = UsersListForm
 
 
 @admin.register(State)
 class StateAdmin(admin.ModelAdmin):
-    # list_display = ('registration',)
-    form = StateForm
+    list_display = ('bot_user', 'registration')
+    # form = StateForm

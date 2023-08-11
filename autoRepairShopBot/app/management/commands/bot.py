@@ -14,10 +14,15 @@ bot = telebot.TeleBot(TOKEN)
 def start_message(message: Message):
     bot.send_message(message.chat.id, "Здравствуйте!")
 
-    BotUser.objects.get_or_create(telegram_id=message.chat.id,
-                                  telegram_login=message.from_user.username)
+    # users = BotUser.objects.get_or_create(telegram_id=message.chat.id,
+    #                                       telegram_login=message.from_user.username)
+    user = BotUser()
+    user.telegram_id = message.chat.id
+    user.telegram_login = message.from_user.username
+    user.save()
 
     state = State()
+    state.bot_user = user
     state.registration = True
     state.save()
 

@@ -3,11 +3,16 @@ from django.utils import timezone
 
 
 class BotUser(models.Model):
+    registration_date = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name="Дата и время регистрации",
+        null=True
+    )
 
     telegram_id = models.BigIntegerField(
         verbose_name="id пользователя",
         unique=True,
-        null=True
+        null=True,
     )
 
     telegram_login = models.CharField(
@@ -20,8 +25,15 @@ class BotUser(models.Model):
 
 
 class State(models.Model):
+    bot_user = models.ForeignKey(
+        BotUser,
+        verbose_name="id пользователя",
+        on_delete=models.CASCADE,
+        null=True
+    )
+
     registration = models.BooleanField(
-        verbose_name='На регистрации', null=False,
+        verbose_name='На регистрации', null=True,
         default=False, choices=((True, 'Да'), (False, 'Нет'))
     )
 
