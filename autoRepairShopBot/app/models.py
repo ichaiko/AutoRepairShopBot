@@ -1,7 +1,9 @@
 from django.db import models
+from django.utils import timezone
 
 
 class BotUser(models.Model):
+
     telegram_id = models.BigIntegerField(
         verbose_name="id пользователя",
         unique=True,
@@ -15,3 +17,14 @@ class BotUser(models.Model):
     class Meta:
         verbose_name = "Пользователь"
         verbose_name_plural = "Пользователи"
+
+
+class State(models.Model):
+    registration = models.BooleanField(
+        verbose_name='На регистрации', null=False,
+        default=False, choices=((True, 'Да'), (False, 'Нет'))
+    )
+
+    class Meta:
+        verbose_name = "Состояние пользователя"
+        verbose_name_plural = "Состояние пользователей"
