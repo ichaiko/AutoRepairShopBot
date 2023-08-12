@@ -10,7 +10,7 @@ Command = Command
 bot = telebot.TeleBot(TOKEN)
 
 
-@bot.message_handler(commands=["start"])
+@bot.message_handler(commands=["start", "старт"])
 def start_message(message: Message):
     bot.send_message(message.chat.id, "Здравствуйте!")
 

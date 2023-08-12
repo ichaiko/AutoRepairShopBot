@@ -38,7 +38,7 @@ class Goods(models.Model):
     )
 
     description = models.TextField(
-        null=True, verbose_name="Описание товара"
+        null=True, verbose_name="Описание товара", blank=True
     )
 
     def __str__(self):
@@ -47,6 +47,32 @@ class Goods(models.Model):
     class Meta:
         verbose_name = "Товар"
         verbose_name_plural = "Товары"
+
+
+class Services(models.Model):
+    name = models.CharField(
+        max_length=30, null=True, verbose_name='Наименование услуги'
+    )
+
+    price = models.IntegerField(
+        verbose_name='Стоимость услуги',
+        null=True
+    )
+
+    description = models.TextField(
+        null=True, verbose_name="Описание товара", blank=True
+    )
+
+    image = models.ImageField(
+        null=True, blank=True, upload_to='images/'
+    )
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Услуга'
+        verbose_name_plural = 'Услуги'
 
 
 class State(models.Model):
@@ -59,7 +85,14 @@ class State(models.Model):
 
     registration = models.BooleanField(
         verbose_name='На регистрации', null=True,
-        default=False, choices=((True, 'Да'), (False, 'Нет'))
+        default=False,
+        choices=((True, 'Да'), (False, 'Нет'))
+    )
+
+    options = models.BooleanField(
+        verbose_name='На выборе товаров/услуг', null=True,
+        default=False,
+        choices=((True, 'Да'), (False, 'Нет'))
     )
 
     class Meta:
