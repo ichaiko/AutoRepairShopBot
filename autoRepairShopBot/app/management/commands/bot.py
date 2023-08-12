@@ -16,6 +16,7 @@ def start_message(message: Message):
 
     user, flag = BotUser.objects.get_or_create(telegram_id=message.chat.id,
                                                telegram_login=message.from_user.username)
+
     if flag:
         state = State()
         state.bot_user = user

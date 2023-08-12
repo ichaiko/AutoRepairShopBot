@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils import timezone
 
 
 class BotUser(models.Model):
@@ -22,6 +21,28 @@ class BotUser(models.Model):
     class Meta:
         verbose_name = "Пользователь"
         verbose_name_plural = "Пользователи"
+
+
+class Goods(models.Model):
+    name = models.CharField(
+        max_length=30, null=True, verbose_name='Наименование товара'
+    )
+
+    price = models.IntegerField(
+        verbose_name='Цена товара',
+        null=True
+    )
+
+    description = models.TextField(
+        null=True, verbose_name="Описание товара"
+    )
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Товар"
+        verbose_name_plural = "Товары"
 
 
 class State(models.Model):
