@@ -33,6 +33,10 @@ class Goods(models.Model):
         null=True
     )
 
+    image = models.ImageField(
+        null=True, blank=True, upload_to='images/'
+    )
+
     description = models.TextField(
         null=True, verbose_name="Описание товара"
     )
