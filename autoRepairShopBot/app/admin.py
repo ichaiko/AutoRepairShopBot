@@ -29,7 +29,7 @@ class ServicesAdmin(admin.ModelAdmin):
 
 @admin.register(State)
 class StateAdmin(admin.ModelAdmin):
-    list_display = ('telegram_login', 'registration', 'options')
+    list_display = ('telegram_login', 'registration', 'goods', 'services')
 
     def telegram_login(self, obj):
         return obj.bot_user.telegram_login

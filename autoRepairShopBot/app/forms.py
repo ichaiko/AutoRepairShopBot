@@ -28,6 +28,7 @@ class GoodsForm(forms.ModelForm):
         fields = (
             'name',
             'price',
+            'availability',
             'description',
             'image'
         )

@@ -33,6 +33,11 @@ class Goods(models.Model):
         null=True
     )
 
+    availability = models.IntegerField(
+        verbose_name='Количество товара в наличии',
+        null=True
+    )
+
     image = models.ImageField(
         null=True, blank=True, upload_to='images/'
     )
@@ -85,12 +90,18 @@ class State(models.Model):
 
     registration = models.BooleanField(
         verbose_name='На регистрации', null=True,
+        default=True,
+        choices=((True, 'Да'), (False, 'Нет'))
+    )
+
+    goods = models.BooleanField(
+        verbose_name='Выбор товаров', null=True,
         default=False,
         choices=((True, 'Да'), (False, 'Нет'))
     )
 
-    options = models.BooleanField(
-        verbose_name='На выборе товаров/услуг', null=True,
+    services = models.BooleanField(
+        verbose_name='Выбор услуг', null=True,
         default=False,
         choices=((True, 'Да'), (False, 'Нет'))
     )
