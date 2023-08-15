@@ -24,7 +24,7 @@ class GoodsAdmin(admin.ModelAdmin):
 @admin.register(Services)
 class ServicesAdmin(admin.ModelAdmin):
     # list_display = ('name', 'price', 'description')
-    form = GoodsForm
+    form = ServicesForm
 
 
 @admin.register(State)
