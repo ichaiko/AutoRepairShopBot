@@ -8,13 +8,14 @@ from app.models import BotUser
 from app.models import State
 from .db_scripts import get_goods_list
 from .db_scripts import get_services_list
+from .db_scripts import get_user_by_id
+from .db_scripts import get_state_by_user
+from .db_scripts import get_state_by_id
 
 goods_url = 'https://asia-caravan.ru/wp-content/uploads/2023/01/372_big.jpg'
 services_url = 'https://ооовебинформ.рф/wp-content/uploads/2014/04/uslugi.jpg'
 Command = Command
 bot = telebot.TeleBot(TOKEN)
-user = BotUser()
-state = State()
 
 
 def inline_button(message: Message):
@@ -33,6 +34,7 @@ def start_message(message: Message):
                                                telegram_login=message.from_user.username)
 
     if flag:
+        state = State()
         state.bot_user = user
         state.save()
 
@@ -46,10 +48,22 @@ def callback_handler(call):
         bot.send_message(call.message.chat.id, 'Отлично! Для выбора товара введите сообщение в следующем формате:')
         bot.send_message(call.message.chat.id, '@AutoRepairShopBot товары')
 
+        state = get_state_by_id(call.message.chat.id)
+        state.registration = False
+        state.services = False
+        state.goods = True
+        state.save()
+
     elif call.data == 'services':
         bot.answer_callback_query(call.id, 'Вы выбрали каталог с услугами')
         bot.send_message(call.message.chat.id, 'Отлично! Для выбора услуги введите сообщение в следующем формате:')
         bot.send_message(call.message.chat.id, '@AutoRepairShopBot услуги')
+
+        state = get_state_by_id(call.message.chat.id)
+        state.registration = False
+        state.services = True
+        state.goods = False
+        state.save()
 
 
 @bot.inline_handler(func=lambda query: query.query == 'товары')
