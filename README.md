@@ -1,1 +1,1 @@
-# AutoRepairShopBot
+Bot для автомастерской с админкой на Django
